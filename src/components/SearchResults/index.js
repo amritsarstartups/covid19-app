@@ -5,6 +5,7 @@ import { Card, Segment, Icon } from "semantic-ui-react";
 import "./style.css";
 
 function SearchResults() {
+  const history = useHistory();
   const results = useSelector(state => state.results);
   const selectedCategory = useSelector(state => state.selectedCategory);
   const selectedArea = useSelector(state => state.selectedArea);
@@ -13,7 +14,7 @@ function SearchResults() {
       window.alert(
         "No results for your selected option. Search something else."
       );
-      window.location.replace("/");
+      history.push("/");
     }
   }, [results]);
   return (
